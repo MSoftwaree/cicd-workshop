@@ -115,3 +115,4 @@ test.describe('Cart', () => {
     await expect(cart.cartCount).toHaveText('1');
   });
 });
+// check

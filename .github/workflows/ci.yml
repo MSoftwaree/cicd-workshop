@@ -203,7 +203,7 @@ jobs:
       - name: UI tests
         run: npx playwright test --project=ui-chromium --shard=${{ matrix.shard }}/${{ github.event_name == 'pull_request' && 2 || 8 }} ${{ env.GREP }}
         env:
-        REPORT_NAME: ui-${{ matrix.shard }}
+          REPORT_NAME: ui-${{ matrix.shard }}
           GREP: >-
             ${{ (github.event_name == 'pull_request'
                  || (github.event_name == 'workflow_dispatch' && inputs.suite == 'smoke'))

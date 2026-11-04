@@ -254,6 +254,14 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 7
+          
+      - name: Upload traces
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: traces-${{ matrix.shard }}
+          path: test-results/
+          retention-days: 14
   
   test-report:
     name: Test report
